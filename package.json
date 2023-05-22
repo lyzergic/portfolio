@@ -2,7 +2,7 @@
   "name": "my-qwik-basic-starter",
   "description": "App with Routing built-in (recommended)",
   "engines": {
-    "node": ">=15.0.0"
+    "node": "^16.14.0"
   },
   "private": true,
   "scripts": {
@@ -42,8 +42,6 @@
     "vercel": "^29.3.6",
     "vite": "4.3.8",
     "vite-tsconfig-paths": "4.2.0"
-  },
-  "dependencies": {
-    "theme-change": "^2.5.0"
   }
 }
+
