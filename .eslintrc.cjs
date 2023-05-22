@@ -36,8 +36,14 @@ module.exports = {
     "no-case-declarations": "off",
     "no-console": "error",
     "@typescript-eslint/no-unused-vars": ["error"],
-    "@typescript-eslint/consistent-type-imports": "warn",
     "no-underscore-dangle": ["error", { allow: [""] }],
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        prefer: "type-imports",
+        fixStyle: "inline-type-imports"
+      }
+    ],
     "simple-import-sort/imports": [
       "error",
       {
