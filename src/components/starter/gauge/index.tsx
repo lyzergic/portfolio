@@ -1,4 +1,5 @@
 import { component$ } from '@builder.io/qwik';
+
 import styles from './gauge.module.css';
 
 export default component$(({ value = 50 }: { value?: number }) => {
