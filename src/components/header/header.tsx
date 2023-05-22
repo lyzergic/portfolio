@@ -31,11 +31,7 @@ export default component$(() => {
     >
       <div>
         <a href="/" title="logo">
-          <Logo
-            color="light"
-            height={logoHeight}
-            width={logoHeight * logoAspectRatio}
-          />
+          <Logo height={logoHeight} width={logoHeight * logoAspectRatio} />
         </a>
       </div>
       <ul class="menu menu-horizontal w-2/4 justify-around">
