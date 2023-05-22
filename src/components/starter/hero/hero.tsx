@@ -1,17 +1,18 @@
-import { component$ } from '@builder.io/qwik';
+import { component$ } from "@builder.io/qwik";
 
-import styles from './hero.module.css';
+import styles from "./hero.module.css";
 
 export default component$(() => {
   return (
-    <div class={['container', styles.hero]}>
+    <div class={["container", styles.hero]}>
       <h1>
         So <span class="highlight">fantastic</span>
         <br />
         to have <span class="highlight">you</span> here
+        <button class="btn btn-secondary">this is my button</button>
       </h1>
       <p>Have fun building your App with Qwik.</p>
-      <div class={styles['button-group']}>
+      <div class={styles["button-group"]}>
         <button
           onClick$={async () => {
             const defaults = {
@@ -20,11 +21,11 @@ export default component$(() => {
               gravity: 0,
               decay: 0.95,
               startVelocity: 30,
-              colors: ['006ce9', 'ac7ff4', '18b6f6', '713fc2', 'ffffff'],
+              colors: ["006ce9", "ac7ff4", "18b6f6", "713fc2", "ffffff"],
               origin: {
                 x: 0.5,
-                y: 0.35,
-              },
+                y: 0.35
+              }
             };
 
             function loadConfetti() {
@@ -32,9 +33,9 @@ export default component$(() => {
                 if ((globalThis as any).confetti) {
                   return resolve((globalThis as any).confetti as any);
                 }
-                const script = document.createElement('script');
+                const script = document.createElement("script");
                 script.src =
-                  'https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js';
+                  "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
                 script.onload = () =>
                   resolve((globalThis as any).confetti as any);
                 script.onerror = reject;
@@ -49,13 +50,13 @@ export default component$(() => {
               confetti({
                 ...defaults,
                 particleCount: 80,
-                scalar: 1.2,
+                scalar: 1.2
               });
 
               confetti({
                 ...defaults,
                 particleCount: 60,
-                scalar: 0.75,
+                scalar: 0.75
               });
             }
 
@@ -79,3 +80,4 @@ export default component$(() => {
     </div>
   );
 });
+
