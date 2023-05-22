@@ -33,7 +33,7 @@ export default component$(() => {
         />
         <RouterHead />
       </head>
-      <body lang="en" class="font-mono">
+      <body lang="en" class="font-mono  max-w-[900px] mx-auto">
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

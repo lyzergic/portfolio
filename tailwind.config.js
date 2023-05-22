@@ -2,12 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   daisyui: {
-    themes: ["cofee", "lofi"]
+    themes: ["winter", "night"]
   },
   theme: {
     extend: {
       fontFamily: {
-        mPlus: "'M PLUS Rounded 1c', sans-serif",
+        plus: "'M PLUS Rounded 1c', sans-serif",
         mono: "'DM Mono', monospace"
       }
     }
