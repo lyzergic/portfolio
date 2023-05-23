@@ -1,4 +1,5 @@
 import {
+  $,
   component$,
   type QwikChangeEvent,
   useSignal,
@@ -21,6 +22,20 @@ export default component$(() => {
     theme.value = localTheme;
     document.querySelector("html")?.setAttribute("data-theme", localTheme);
     localStorage.setItem("theme", localTheme);
+  });
+
+  const onThemeChange = $((e: QwikChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      theme.value = "winter";
+      document.querySelector("html")?.setAttribute("data-theme", "winter");
+      localStorage.setItem("theme", "winter");
+
+      return;
+    }
+
+    theme.value = "night";
+    document.querySelector("html")?.setAttribute("data-theme", "night");
+    localStorage.setItem("theme", "night");
   });
 
   return (
@@ -53,21 +68,7 @@ export default component$(() => {
         {theme.value !== "" && (
           <label class="swap swap-flip text-s mx-2">
             <input
-              onChange$={(e: QwikChangeEvent<HTMLInputElement>) => {
-                if (e.target.checked) {
-                  theme.value = "winter";
-                  document
-                    .querySelector("html")
-                    ?.setAttribute("data-theme", "winter");
-                  localStorage.setItem("theme", "winter");
-                } else {
-                  theme.value = "night";
-                  document
-                    .querySelector("html")
-                    ?.setAttribute("data-theme", "night");
-                  localStorage.setItem("theme", "night");
-                }
-              }}
+              onChange$={onThemeChange}
               checked={theme.value === "winter" ? true : false}
               type="checkbox"
             />
