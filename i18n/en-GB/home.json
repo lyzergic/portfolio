@@ -1,5 +1,8 @@
 {
   "home": {
-    "number": ""
+    "head": {
+      "title": "Home"
+    }
   }
 }
+

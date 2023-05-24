@@ -2,9 +2,10 @@
   "runtime": {
     "home": {
       "head": {
-        "description": "This is to showcase Adrian Luca, a web developer. Take a peek!",
-        "title": "Home"
+        "title": "Home",
+        "description": "This is to showcase Adrian Luca, a web developer. Take a peek!"
       }
     }
   }
 }
+

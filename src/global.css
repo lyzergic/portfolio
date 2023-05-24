@@ -6,18 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --qwik-dark-blue: #006ce9;
-    --qwik-light-blue: #18b6f6;
-    --qwik-light-purple: #ac7ff4;
-    --qwik-dark-purple: #713fc2;
-    --qwik-dirty-black: #1d2033;
-    --qwik-dark-background: #151934;
-    --qwik-dark-text: #ffffff;
-  }
-}
-
 /**
  * WHAT IS THIS FILE?
  *
@@ -33,3 +21,4 @@
  * the styles in here will be applied to the Document, without any sort of CSS scoping.
  *
  */
+

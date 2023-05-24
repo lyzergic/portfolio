@@ -1,10 +1,9 @@
 import { Speak } from "qwik-speak";
 
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 
 import Footer from "../components/footer/footer";
-import styles from "./styles.css?inline";
 
 import Header from "~/components/header/header";
 
@@ -15,8 +14,6 @@ export const useServerTimeLoader = routeLoader$(() => {
 });
 
 export const Layout = component$(() => {
-  useStyles$(styles);
-
   return (
     <>
       <Header />
