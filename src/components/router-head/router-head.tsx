@@ -1,10 +1,13 @@
-import { component$ } from '@builder.io/qwik';
-import { useDocumentHead, useLocation } from '@builder.io/qwik-city';
+import { useTranslate } from "qwik-speak";
+
+import { component$ } from "@builder.io/qwik";
+import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
  */
 export const RouterHead = component$(() => {
+  const t = useTranslate();
   const head = useDocumentHead();
   const loc = useLocation();
 
@@ -17,7 +20,11 @@ export const RouterHead = component$(() => {
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
       {head.meta.map((m) => (
-        <meta key={m.key} {...m} />
+        <meta
+          key={m.key}
+          name={m.name}
+          content={m.name === "description" ? t(m.content!) : m.content}
+        />
       ))}
 
       {head.links.map((l) => (
@@ -30,3 +37,4 @@ export const RouterHead = component$(() => {
     </>
   );
 });
+

@@ -1,0 +1,12 @@
+{
+  "layout": {
+    "about": "About",
+    "contact": "Contact Me",
+    "english": "English",
+    "italian": "Italian",
+    "language": "Language",
+    "readCV": "Read CV",
+    "romanian": "Romanian",
+    "russian": "Russian"
+  }
+}

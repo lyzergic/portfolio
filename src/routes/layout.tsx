@@ -1,3 +1,5 @@
+import { Speak } from "qwik-speak";
+
 import { component$, Slot, useStyles$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 
@@ -12,7 +14,7 @@ export const useServerTimeLoader = routeLoader$(() => {
   };
 });
 
-export default component$(() => {
+export const Layout = component$(() => {
   useStyles$(styles);
 
   return (
@@ -23,6 +25,14 @@ export default component$(() => {
       </main>
       <Footer />
     </>
+  );
+});
+
+export default component$(() => {
+  return (
+    <Speak assets={["layout"]}>
+      <Layout />
+    </Speak>
   );
 });
 

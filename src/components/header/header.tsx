@@ -1,3 +1,5 @@
+import { useTranslate } from "qwik-speak";
+
 import {
   $,
   component$,
@@ -6,6 +8,7 @@ import {
   useVisibleTask$
 } from "@builder.io/qwik";
 
+import { ChangeLocale } from "../change-locale";
 import { Logo } from "../icons/logo";
 import { Moon } from "../icons/moon";
 import { Sun } from "../icons/sun";
@@ -15,6 +18,7 @@ const logoAspectRatio = 2.86;
 
 export default component$(() => {
   const theme = useSignal<string>("");
+  const t = useTranslate();
 
   useVisibleTask$(() => {
     const localTheme = localStorage.getItem("theme") ?? "winter";
@@ -41,7 +45,7 @@ export default component$(() => {
   return (
     <header
       class={
-        "flex fixed justify-between left-0 items-center px-10 py-3 rounded-2xl mx-3 my-3 bg-[rgba(255, 255, 255, 0.25)]  w-[calc(100%-24px)] shadow-[0_8px_32px_0_rgba(_31,38,135,0.37_)] backdrop-blur-[_4px_] border  border-solid border-[rgba(_255,255,255,0.18_)]"
+        "flex fixed top-0 justify-between left-0 items-center px-10 py-3 rounded-2xl mx-3 my-3 bg-[rgba(255, 255, 255, 0.25)]  w-[calc(100%-24px)] shadow-[0_8px_32px_0_rgba(_31,38,135,0.37_)] backdrop-blur-[_4px_] border  border-solid border-[rgba(_255,255,255,0.18_)]"
       }
     >
       <div>
@@ -50,19 +54,12 @@ export default component$(() => {
         </a>
       </div>
       <ul class="menu menu-horizontal w-2/4 justify-around">
-        <li class="cursor-pointer">About</li>
-        <li class="cursor-pointer">Read CV</li>
-        <li class=" cursor-pointer">Contact</li>
+        <li class="cursor-pointer">{t("layout.about")}</li>
+        <li class="cursor-pointer">{t("layout.readCV")}</li>
+        <li class=" cursor-pointer">{t("layout.contact")}</li>
         <li class=" cursor-pointer">
-          Language
-          <ul class=" bg-base-100">
-            <li>
-              <a>English</a>
-            </li>
-            <li>
-              <a>Romanian</a>
-            </li>
-          </ul>
+          {t("layout.language")}
+          <ChangeLocale />
         </li>
 
         {theme.value !== "" && (

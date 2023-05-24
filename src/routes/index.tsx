@@ -1,17 +1,32 @@
+import { Speak, useTranslate } from "qwik-speak";
+
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
+export const Home = component$(() => {
+  const t = useTranslate();
+
+  return <div class="mt-24">{t("home.number")}</div>;
+});
+
 export default component$(() => {
-  return <>and this</>;
+  return (
+    /**
+     * Add Home translations (only available in child components)
+     */
+    <Speak assets={["home"]}>
+      <Home />
+    </Speak>
+  );
 });
 
 export const head: DocumentHead = {
-  title: "Welcome to Adrian Luca' website, take a look!",
+  title: "runtime.home.head.title@@Home",
   meta: [
     {
       name: "description",
       content:
-        "This website was created to showcase Adrian Luca as a web develoepr"
+        "runtime.home.head.description@@This website was created to showcase Adrian Luca as a web develoepr"
     }
   ]
 };
